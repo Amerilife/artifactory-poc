@@ -1,0 +1,46 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:1.0.1
+
+    - name: Azure Container Registry Build
+      uses: Azure/acr-build@v1
+      with:
+        # Service Principal with Contributor role on the ACR
+        service_principal: acrlbpllcaks
+        # Service Principal password
+        service_principal_password: U7fkeUdC=RiERDAPJx/liMGgfYQJDmLG
+        # Azure Container Registry tenant
+        tenant: b07c5412-1387-4902-b7f3-8bddb97b4b0d
+        # The name of the ACR, minus the .azurecr.io
+        registry: acrlbpllcaks
+        # Repository to use
+        repository: python-poc
+        # Github access token for private repositories
+        git_access_token: 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
+        # Docker image name
+        image: python-docker
+        # Docker image tag, default to the commit SHA
+        tag: 1.0.1
+        # Branch to build from, defaults to master
+        branch: main
+        # The folder in the Github repo that holds the source
+        folder: artifactory-poc
+        # The location of the Dockerfile; defaults to ./Dockerfile
+        dockerfile: ./Dockerfile
+        # JSON specifying key=value pairs as as Docker build arguments
+        # build_args: # optional
