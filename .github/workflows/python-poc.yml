@@ -13,10 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:1.0.1
-
     - name: Azure Container Registry Build
       uses: Azure/acr-build@v1
       with:
@@ -25,7 +21,7 @@ jobs:
         # Service Principal password
         service_principal_password: U7fkeUdC=RiERDAPJx/liMGgfYQJDmLG
         # Azure Container Registry tenant
-        tenant: b07c5412-1387-4902-b7f3-8bddb97b4b0d
+        tenant: LBP-LLC Pay-As-You-Go
         # The name of the ACR, minus the .azurecr.io
         registry: acrlbpllcaks
         # Repository to use
