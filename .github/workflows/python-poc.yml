@@ -21,7 +21,7 @@ jobs:
         # Service Principal password
         service_principal_password: U7fkeUdC=RiERDAPJx/liMGgfYQJDmLG
         # Azure Container Registry tenant
-        tenant: 'LBP-LLC Pay-As-You-Go'
+        tenant: acrlbpllcaks
         # The name of the ACR, minus the .azurecr.io
         registry: acrlbpllcaks
         # Repository to use
