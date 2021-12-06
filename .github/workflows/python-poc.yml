@@ -21,7 +21,7 @@ jobs:
         # Service Principal password
         service_principal_password: U7fkeUdC=RiERDAPJx/liMGgfYQJDmLG
         # Azure Container Registry tenant
-        tenant: 86545b4b-8dd6-4b55-95f3-8d2bbdad26a1
+        tenant: 'Leading Business Partners LLC'
         # The name of the ACR, minus the .azurecr.io
         registry: acrlbpllcaks
         # Repository to use
