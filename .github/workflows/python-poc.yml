@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY_NAME: acrlbpllcaks
-  APP_NAME: artifactory-poc
+  APP_NAME: artifactorypoc
 
 jobs:
   demo:
