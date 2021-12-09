@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: default
+  name:
+    artifactory-poc
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: artifactory-poc
+  template:
+    metadata:
+      labels:
+        app: artifactory-poc
+    spec:
+      containers:
+        - name: artifactory-poc
+          image: IMAGE_REPO:VERSION
