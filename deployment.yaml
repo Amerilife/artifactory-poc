@@ -21,7 +21,7 @@ spec:
           - containerPort: 80
           env:
           - name: TITLE
-          value: "Artifactory POC"
+            value: "Artifactory POC"
           resources:
             limits:
               cpu: 300m
