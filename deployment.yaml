@@ -17,3 +17,27 @@ spec:
       containers:
         - name: artifactory-poc
           image: IMAGE_REPO:VERSION
+          ports:
+          - containerPort: 80
+          env:
+          - name: TITLE
+          value: "Artifactory POC"
+          resources:
+            limits:
+              cpu: 300m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: artifactory-poc  
+  namespace: ingress-basic
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+  selector:
+    app: artifactory-poc
