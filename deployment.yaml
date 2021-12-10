@@ -34,7 +34,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: artifactory-poc  
-  namespace: ingress-basic
+  namespace: artifactory-poc
 spec:
   type: ClusterIP
   ports:
