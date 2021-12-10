@@ -1,6 +1,6 @@
 VERSION_FILE := version
 VERSION := $(shell cat ${VERSION_FILE})
-IMAGE_REPO := $(ACR_NAME).azurecr.io/upgrade-test
+IMAGE_REPO := $(ACR_NAME).azurecr.io/artifactory-poc
 
 .PHONY: build
 build:
